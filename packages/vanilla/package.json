@@ -1,0 +1,43 @@
+{
+  "name": "@skedox/vanilla",
+  "version": "0.0.1",
+  "description": "Skedox Analytics SDK for vanilla JavaScript - lightweight web analytics",
+  "type": "module",
+  "main": "./dist/skedox.cjs",
+  "module": "./dist/skedox.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/skedox.iife.js",
+  "jsdelivr": "./dist/skedox.iife.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/skedox.js",
+      "require": "./dist/skedox.cjs"
+    },
+    "./script": "./dist/skedox.iife.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "analytics",
+    "tracking",
+    "skedox",
+    "javascript",
+    "vanilla"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skedox/analytics.git",
+    "directory": "packages/vanilla"
+  },
+  "dependencies": {
+    "@skedox/core": "0.0.1"
+  },
+  "sideEffects": false
+}

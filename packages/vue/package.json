@@ -1,0 +1,49 @@
+{
+  "name": "@skedox/vue",
+  "version": "0.0.1",
+  "description": "Skedox Analytics SDK for Vue.js - composables and plugin for web analytics",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "analytics",
+    "tracking",
+    "skedox",
+    "vue",
+    "vue3",
+    "composables"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skedox/analytics.git",
+    "directory": "packages/vue"
+  },
+  "dependencies": {
+    "@skedox/core": "0.0.1"
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": false
+    }
+  },
+  "sideEffects": false
+}
