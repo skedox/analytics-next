@@ -14,14 +14,10 @@ const handleCtaClick = () => {
     <p>Welcome to the Skedox Analytics Vue example.</p>
 
     <div class="buttons">
-      <button class="btn btn-primary" @click="handleCtaClick">
-        Track CTA Click
-      </button>
+      <button class="btn btn-primary" @click="handleCtaClick">Track CTA Click</button>
 
       <!-- Using v-track directive -->
-      <button class="btn btn-success" v-track="'hero_button'">
-        v-track Directive
-      </button>
+      <button class="btn btn-success" v-track="'hero_button'">v-track Directive</button>
 
       <!-- v-track with data -->
       <button class="btn btn-warning" v-track="{ event: 'action', data: 'test' }">

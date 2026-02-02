@@ -1,4 +1,13 @@
-import { init, track, trackPageview, getVisitorId, getSessionId, optOut, optIn, isEnabled } from '@skedox/vanilla';
+import {
+  init,
+  track,
+  trackPageview,
+  getVisitorId,
+  getSessionId,
+  optOut,
+  optIn,
+  isEnabled,
+} from '@skedox/vanilla';
 
 const ORG_ID = '7bf5c63d-05c4-4b9f-80b9-7676cfa62d4c';
 const PUSH_URL = import.meta.env.VITE_PUSH_URL || 'https://push.skedox.com';
@@ -20,7 +29,7 @@ init({
   endpoint: PUSH_URL,
   debug: true,
   autoTrack: true,
-  spa: true
+  spa: true,
 });
 
 // Update status
@@ -42,7 +51,7 @@ document.getElementById('nav').addEventListener('click', (e) => {
     history.pushState({}, '', path);
 
     // Update active link
-    document.querySelectorAll('#nav a').forEach(a => a.classList.remove('active'));
+    document.querySelectorAll('#nav a').forEach((a) => a.classList.remove('active'));
     e.target.classList.add('active');
 
     log(`Navigated to ${path} (auto-tracked)`);

@@ -45,22 +45,23 @@ export function AnalyticsProvider({ config, children }: AnalyticsProviderProps):
     return () => {
       tracker.destroy();
     };
-  }, [orgId]); // Re-init only if orgId changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [orgId]); // Re-init only if orgId changes, config object reference may change
 
-  const value = useMemo<AnalyticsContextValue>(() => ({
-    track: (event: string, data?: Record<string, unknown>) => trackerRef.current.track(event, data),
-    trackPageview: (path?: string) => trackerRef.current.trackPageview(path),
-    getVisitorId: () => trackerRef.current.getVisitorId(),
-    getSessionId: () => trackerRef.current.getSessionId(),
-    optOut: () => trackerRef.current.optOut(),
-    optIn: () => trackerRef.current.optIn(),
-    isEnabled: () => trackerRef.current.isEnabled(),
-    _tracker: trackerRef.current,
-  }), []);
-
-  return (
-    <AnalyticsContext.Provider value={value}>
-      {children}
-    </AnalyticsContext.Provider>
+  const value = useMemo<AnalyticsContextValue>(
+    () => ({
+      track: (event: string, data?: Record<string, unknown>) =>
+        trackerRef.current.track(event, data),
+      trackPageview: (path?: string) => trackerRef.current.trackPageview(path),
+      getVisitorId: () => trackerRef.current.getVisitorId(),
+      getSessionId: () => trackerRef.current.getSessionId(),
+      optOut: () => trackerRef.current.optOut(),
+      optIn: () => trackerRef.current.optIn(),
+      isEnabled: () => trackerRef.current.isEnabled(),
+      _tracker: trackerRef.current,
+    }),
+    []
   );
+
+  return <AnalyticsContext.Provider value={value}>{children}</AnalyticsContext.Provider>;
 }

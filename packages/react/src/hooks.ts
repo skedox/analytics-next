@@ -106,10 +106,7 @@ export function useTrackOnce(event: string, data?: Record<string, unknown>): voi
  * }
  * ```
  */
-export function useTrackCallback(
-  event: string,
-  data?: Record<string, unknown>
-): () => void {
+export function useTrackCallback(event: string, data?: Record<string, unknown>): () => void {
   const context = useContext(AnalyticsContext);
 
   return useCallback(() => {

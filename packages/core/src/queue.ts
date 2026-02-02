@@ -19,9 +19,7 @@ export function createQueue(options: QueueOptions) {
   let flushTimer: ReturnType<typeof setTimeout> | null = null;
   let isOnline = typeof navigator !== 'undefined' ? navigator.onLine : true;
 
-  const log = debug
-    ? (...args: unknown[]) => console.log('[skedox:queue]', ...args)
-    : () => {};
+  const log = debug ? (...args: unknown[]) => console.log('[skedox:queue]', ...args) : () => {};
 
   // Load any events from previous offline session
   const savedEvents = loadQueue() as AnalyticsEvent[];
@@ -118,9 +116,10 @@ export function createQueue(options: QueueOptions) {
     log('Flushing', events.length, 'events');
 
     // Send as batch if multiple events, single otherwise
-    const success = events.length === 1
-      ? await transport.sendEvent(events[0])
-      : await transport.sendBatch(events);
+    const success =
+      events.length === 1
+        ? await transport.sendEvent(events[0])
+        : await transport.sendBatch(events);
 
     // Re-queue failed events
     if (!success) {

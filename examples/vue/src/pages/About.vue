@@ -18,9 +18,7 @@ const handleReadMore = () => {
     <p>This page uses <code>useTrackOnce</code> to track a single event on mount.</p>
 
     <div class="buttons">
-      <button class="btn btn-primary" @click="handleReadMore">
-        Track Read More
-      </button>
+      <button class="btn btn-primary" @click="handleReadMore">Track Read More</button>
     </div>
   </div>
 </template>
