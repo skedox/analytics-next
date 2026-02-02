@@ -1,6 +1,6 @@
 {
   "name": "@skedox/analytics-react",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Skedox Analytics SDK for React - hooks and components for web analytics",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -34,7 +34,7 @@
     "directory": "packages/react"
   },
   "dependencies": {
-    "@skedox/analytics-core": "^1.0.0"
+    "@skedox/analytics-core": "^1.1.1"
   },
   "peerDependencies": {
     "react": ">=17.0.0"
