@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skedox Analytics - Vanilla Example</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+
+    .status {
+      background: #f0f0f0;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      font-family: monospace;
+    }
+
+    .status.active {
+      background: #d4edda;
+      border: 1px solid #c3e6cb;
+    }
+
+    .endpoint {
+      background: #fff3cd;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-family: monospace;
+      font-size: 0.875rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 0.5rem 1rem;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    nav a:hover {
+      background: #0056b3;
+    }
+
+    nav a.active {
+      background: #28a745;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #fafafa;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #007bff;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0056b3;
+    }
+
+    .btn-success {
+      background: #28a745;
+      color: white;
+    }
+
+    .btn-success:hover {
+      background: #1e7e34;
+    }
+
+    .btn-warning {
+      background: #ffc107;
+      color: #333;
+    }
+
+    .btn-warning:hover {
+      background: #e0a800;
+    }
+
+    .btn-danger {
+      background: #dc3545;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #c82333;
+    }
+
+    .btn-secondary {
+      background: #6c757d;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #545b62;
+    }
+
+    #log {
+      background: #1a1a1a;
+      color: #0f0;
+      padding: 1rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.875rem;
+      max-height: 300px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+    #log:empty::before {
+      content: 'Events will appear here...';
+      color: #666;
+    }
+
+    .info {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .info-item {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .info-item label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+      color: #666;
+      font-size: 0.875rem;
+    }
+
+    .info-item code {
+      display: block;
+      background: #e9ecef;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <h1>Skedox Analytics - Vanilla JS Example</h1>
+
+  <div id="endpoint" class="endpoint">
+    Endpoint: loading...
+  </div>
+
+  <div id="status" class="status">
+    Initializing...
+  </div>
+
+  <section>
+    <h2>Navigation (SPA Simulation)</h2>
+    <nav id="nav">
+      <a href="/" class="active">Home</a>
+      <a href="/about">About</a>
+      <a href="/products">Products</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <p>Click links to simulate SPA navigation. Pageviews are tracked automatically.</p>
+  </section>
+
+  <section>
+    <h2>Track Custom Events</h2>
+    <button class="btn-primary" onclick="trackEvent('button_click', { button: 'cta' })">
+      Track Button Click
+    </button>
+    <button class="btn-success" onclick="trackEvent('signup', { plan: 'pro', price: 99 })">
+      Track Signup
+    </button>
+    <button class="btn-warning" onclick="trackEvent('add_to_cart', { product: 'widget', quantity: 2 })">
+      Track Add to Cart
+    </button>
+    <button class="btn-danger" onclick="trackEvent('purchase', { amount: 199, currency: 'EUR' })">
+      Track Purchase
+    </button>
+  </section>
+
+  <section>
+    <h2>Manual Pageview</h2>
+    <button class="btn-secondary" onclick="manualPageview('/custom-page')">
+      Track /custom-page
+    </button>
+    <button class="btn-secondary" onclick="manualPageview('/landing/summer-sale')">
+      Track /landing/summer-sale
+    </button>
+  </section>
+
+  <section>
+    <h2>Privacy Controls</h2>
+    <button class="btn-danger" onclick="handleOptOut()">Opt Out</button>
+    <button class="btn-success" onclick="handleOptIn()">Opt In</button>
+    <button class="btn-secondary" onclick="checkStatus()">Check Status</button>
+  </section>
+
+  <section>
+    <h2>Visitor Info</h2>
+    <div class="info">
+      <div class="info-item">
+        <label>Visitor ID</label>
+        <code id="visitorId">-</code>
+      </div>
+      <div class="info-item">
+        <label>Session ID</label>
+        <code id="sessionId">-</code>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Event Log</h2>
+    <div id="log"></div>
+  </section>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
