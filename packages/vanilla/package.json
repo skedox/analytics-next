@@ -37,7 +37,7 @@
     "directory": "packages/vanilla"
   },
   "dependencies": {
-    "@skedox/analytics-core": "1.0.0"
+    "@skedox/analytics-core": "^1.0.0"
   },
   "sideEffects": false
 }
