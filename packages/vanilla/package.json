@@ -1,6 +1,6 @@
 {
   "name": "@skedox/analytics-vanilla",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Skedox Analytics SDK for vanilla JavaScript - lightweight web analytics",
   "type": "module",
   "main": "./dist/skedox.cjs",
