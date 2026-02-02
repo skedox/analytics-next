@@ -27,8 +27,8 @@ const handleOptIn = () => {
   isEnabled.value = true;
 };
 
-const statusClass = computed(() => isEnabled.value ? 'badge-success' : 'badge-danger');
-const statusText = computed(() => isEnabled.value ? 'Active' : 'Disabled');
+const statusClass = computed(() => (isEnabled.value ? 'badge-success' : 'badge-danger'));
+const statusText = computed(() => (isEnabled.value ? 'Active' : 'Disabled'));
 </script>
 
 <template>

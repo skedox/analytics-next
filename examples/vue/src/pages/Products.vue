@@ -34,9 +34,7 @@ const handleAddToCart = (product: Product) => {
       <div v-for="product in products" :key="product.id" class="product-card">
         <h3>{{ product.name }}</h3>
         <p class="price">${{ product.price }}</p>
-        <button class="btn btn-success" @click="handleAddToCart(product)">
-          Add to Cart
-        </button>
+        <button class="btn btn-success" @click="handleAddToCart(product)">Add to Cart</button>
       </div>
     </div>
   </div>

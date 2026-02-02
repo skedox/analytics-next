@@ -27,9 +27,7 @@ function Home() {
         </button>
 
         <TrackClick event="hero_button" data={{ section: 'hero' }}>
-          <button className="btn btn-success">
-            TrackClick Component
-          </button>
+          <button className="btn btn-success">TrackClick Component</button>
         </TrackClick>
       </div>
     </div>
@@ -46,10 +44,7 @@ function About() {
       <p>Learn more about our analytics solution.</p>
 
       <div className="buttons">
-        <button
-          className="btn btn-primary"
-          onClick={() => track('read_more', { page: 'about' })}
-        >
+        <button className="btn btn-primary" onClick={() => track('read_more', { page: 'about' })}>
           Track Read More
         </button>
       </div>
@@ -66,7 +61,7 @@ function Products() {
     { id: 3, name: 'Widget Max', price: 199 },
   ];
 
-  const handleAddToCart = (product: typeof products[0]) => {
+  const handleAddToCart = (product: (typeof products)[0]) => {
     track('add_to_cart', {
       product_id: product.id,
       product_name: product.name,
@@ -82,10 +77,7 @@ function Products() {
           <div key={product.id} className="product-card">
             <h3>{product.name}</h3>
             <p className="price">${product.price}</p>
-            <button
-              className="btn btn-success"
-              onClick={() => handleAddToCart(product)}
-            >
+            <button className="btn btn-success" onClick={() => handleAddToCart(product)}>
               Add to Cart
             </button>
           </div>
@@ -128,7 +120,7 @@ function Contact() {
 // Status panel
 function StatusPanel() {
   const { visitorId, sessionId } = useIdentity();
-  const { optOut, optIn, isEnabled } = useAnalytics();
+  const { optOut, optIn } = useAnalytics();
   const [enabled, setEnabled] = useState(true);
 
   const handleOptOut = () => {

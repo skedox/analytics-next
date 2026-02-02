@@ -1,4 +1,12 @@
-import { type ReactNode, type MouseEvent, type ReactElement, cloneElement, isValidElement, Children, useCallback } from 'react';
+import {
+  type ReactNode,
+  type MouseEvent,
+  type ReactElement,
+  cloneElement,
+  isValidElement,
+  Children,
+  useCallback,
+} from 'react';
 import { useAnalytics } from './hooks';
 
 export interface TrackClickProps {

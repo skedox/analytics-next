@@ -71,9 +71,7 @@ export function createTransport(endpoint: string, debug: boolean) {
   const singleUrl = `${endpoint}/a/e`;
   const batchUrl = `${endpoint}/a/b`;
 
-  const log = debug
-    ? (...args: unknown[]) => console.log('[skedox]', ...args)
-    : () => {};
+  const log = debug ? (...args: unknown[]) => console.log('[skedox]', ...args) : () => {};
 
   /**
    * Send a single event

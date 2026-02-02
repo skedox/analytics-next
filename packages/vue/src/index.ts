@@ -1,5 +1,10 @@
 // Plugin
-export { SkedoxPlugin, ANALYTICS_KEY, type SkedoxPluginOptions, type SkedoxPluginInit } from './plugin';
+export {
+  SkedoxPlugin,
+  ANALYTICS_KEY,
+  type SkedoxPluginOptions,
+  type SkedoxPluginInit,
+} from './plugin';
 
 // Composables
 export {

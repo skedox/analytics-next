@@ -21,9 +21,7 @@ const handleSubmit = () => {
       <input type="text" placeholder="Name" required />
       <input type="email" placeholder="Email" required />
       <textarea placeholder="Message" required></textarea>
-      <button type="submit" class="btn btn-primary">
-        Submit (Track Form)
-      </button>
+      <button type="submit" class="btn btn-primary">Submit (Track Form)</button>
     </form>
   </div>
 </template>

@@ -1,4 +1,10 @@
-import type { AnalyticsConfig, ResolvedConfig, AnalyticsEvent, Analytics, InitParam } from './types';
+import type {
+  AnalyticsConfig,
+  ResolvedConfig,
+  AnalyticsEvent,
+  Analytics,
+  InitParam,
+} from './types';
 import { getVisitorId, getSessionId, isOptedOut, setOptOut } from './storage';
 import { createTransport } from './transport';
 import { createQueue, type Queue } from './queue';
@@ -77,7 +83,11 @@ export function createTracker(): Analytics {
   /**
    * Create an event payload
    */
-  function createEvent(type: string, path?: string, data?: Record<string, unknown>): AnalyticsEvent {
+  function createEvent(
+    type: string,
+    path?: string,
+    data?: Record<string, unknown>
+  ): AnalyticsEvent {
     return {
       s: config!.orgId,
       t: type,
