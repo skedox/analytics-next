@@ -1,4 +1,4 @@
-import { createTracker, type InitParam } from '@skedox/core';
+import { createTracker, type InitParam } from '@skedox/analytics-core';
 
 // Create singleton instance
 const tracker = createTracker();
@@ -217,7 +217,7 @@ if (typeof window !== 'undefined') {
 }
 
 // Re-export types
-export type { AnalyticsConfig, InitParam, Analytics } from '@skedox/core';
+export type { AnalyticsConfig, InitParam, Analytics } from '@skedox/analytics-core';
 
 // Default export
 export default skedox;

@@ -1,6 +1,6 @@
 import { inject, watch, onMounted, onUnmounted, ref, type Ref } from 'vue';
 import { ANALYTICS_KEY } from './plugin';
-import type { Analytics } from '@skedox/core';
+import type { Analytics } from '@skedox/analytics-core';
 
 /**
  * Composable to access analytics functions

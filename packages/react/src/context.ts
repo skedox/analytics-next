@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import type { Analytics } from '@skedox/core';
+import type { Analytics } from '@skedox/analytics-core';
 
 export interface AnalyticsContextValue {
   /** Track a custom event */

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useAnalytics } from '@skedox/vue';
+import { useAnalytics } from '@skedox/analytics-vue';
 
 const { track } = useAnalytics();
 const submitted = ref(false);
