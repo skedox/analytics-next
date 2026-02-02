@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import { SkedoxPlugin } from '@skedox/vue';
+import { SkedoxPlugin } from '@skedox/analytics-vue';
 import App from './App.vue';
 import './style.css';
 

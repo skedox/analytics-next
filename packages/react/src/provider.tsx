@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, type ReactNode } from 'react';
-import { createTracker, type InitParam } from '@skedox/core';
+import { createTracker, type InitParam } from '@skedox/analytics-core';
 import { AnalyticsContext, type AnalyticsContextValue } from './context';
 
 export interface AnalyticsProviderProps {

@@ -30,7 +30,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@skedox/core': resolve(__dirname, '../core/src/index.ts'),
+      '@skedox/analytics-core': resolve(__dirname, '../core/src/index.ts'),
     },
   },
 });

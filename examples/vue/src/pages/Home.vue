@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAnalytics } from '@skedox/vue';
+import { useAnalytics } from '@skedox/analytics-vue';
 
 const { track } = useAnalytics();
 

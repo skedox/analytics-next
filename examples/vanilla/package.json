@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@skedox/vanilla": "file:../../packages/vanilla"
+    "@skedox/analytics-vanilla": "file:../../packages/vanilla"
   },
   "devDependencies": {
     "vite": "^6.0.0"

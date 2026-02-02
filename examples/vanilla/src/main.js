@@ -7,7 +7,7 @@ import {
   optOut,
   optIn,
   isEnabled,
-} from '@skedox/vanilla';
+} from '@skedox/analytics-vanilla';
 
 const ORG_ID = '7bf5c63d-05c4-4b9f-80b9-7676cfa62d4c';
 const PUSH_URL = import.meta.env.VITE_PUSH_URL || 'https://push.skedox.com';

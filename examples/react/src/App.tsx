@@ -1,5 +1,5 @@
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { useAnalytics, usePageview, useIdentity, TrackClick } from '@skedox/react';
+import { useAnalytics, usePageview, useIdentity, TrackClick } from '@skedox/analytics-react';
 import { useState } from 'react';
 
 // Track pageviews on route change

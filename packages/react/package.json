@@ -1,6 +1,6 @@
 {
-  "name": "@skedox/react",
-  "version": "0.0.1",
+  "name": "@skedox/analytics-react",
+  "version": "1.0.0",
   "description": "Skedox Analytics SDK for React - hooks and components for web analytics",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -30,11 +30,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/skedox/analytics.git",
+    "url": "https://github.com/skedox/analytics-next.git",
     "directory": "packages/react"
   },
   "dependencies": {
-    "@skedox/core": "0.0.1"
+    "@skedox/analytics-core": "1.0.0"
   },
   "peerDependencies": {
     "react": ">=17.0.0"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTrackCallback } from '@skedox/vue';
+import { useTrackCallback } from '@skedox/analytics-vue';
 
 interface Product {
   id: number;

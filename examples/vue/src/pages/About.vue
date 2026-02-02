@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTrackOnce, useAnalytics } from '@skedox/vue';
+import { useTrackOnce, useAnalytics } from '@skedox/analytics-vue';
 
 // Track page view event once
 useTrackOnce('about_page_view', { source: 'navigation' });

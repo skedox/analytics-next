@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-import { usePageview, useIdentity, useAnalytics } from '@skedox/vue';
+import { usePageview, useIdentity, useAnalytics } from '@skedox/analytics-vue';
 import { ref, computed } from 'vue';
 
 const route = useRoute();

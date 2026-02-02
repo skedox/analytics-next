@@ -12,12 +12,12 @@ Lightweight, privacy-focused web analytics SDK. Track pageviews and custom event
 
 ## Packages
 
-| Package                                 | Description                  | Size |
-| --------------------------------------- | ---------------------------- | ---- |
-| [`@skedox/vanilla`](./packages/vanilla) | Vanilla JavaScript SDK       | ~4KB |
-| [`@skedox/react`](./packages/react)     | React hooks and components   | ~4KB |
-| [`@skedox/vue`](./packages/vue)         | Vue 3 plugin and composables | ~4KB |
-| [`@skedox/core`](./packages/core)       | Core engine (internal)       | ~3KB |
+| Package                                           | Description                  | Size |
+| ------------------------------------------------- | ---------------------------- | ---- |
+| [`@skedox/analytics-vanilla`](./packages/vanilla) | Vanilla JavaScript SDK       | ~4KB |
+| [`@skedox/analytics-react`](./packages/react)     | React hooks and components   | ~4KB |
+| [`@skedox/analytics-vue`](./packages/vue)         | Vue 3 plugin and composables | ~4KB |
+| [`@skedox/analytics-core`](./packages/core)       | Core engine (internal)       | ~3KB |
 
 ## Quick Start
 
@@ -53,11 +53,11 @@ Lightweight, privacy-focused web analytics SDK. Track pageviews and custom event
 ### Vanilla JavaScript (ESM)
 
 ```bash
-npm install @skedox/vanilla
+npm install @skedox/analytics-vanilla
 ```
 
 ```javascript
-import { init, track, trackPageview } from '@skedox/vanilla';
+import { init, track, trackPageview } from '@skedox/analytics-vanilla';
 
 // Simple init with orgId
 init('org_xxxxxxxxx');
@@ -75,11 +75,11 @@ trackPageview('/custom-path');
 ### React
 
 ```bash
-npm install @skedox/react
+npm install @skedox/analytics-react
 ```
 
 ```tsx
-import { AnalyticsProvider, useAnalytics, usePageview } from '@skedox/react';
+import { AnalyticsProvider, useAnalytics, usePageview } from '@skedox/analytics-react';
 import { useLocation } from 'react-router-dom';
 
 // Wrap your app
@@ -119,13 +119,13 @@ function SignupButton() {
 ### Vue.js
 
 ```bash
-npm install @skedox/vue
+npm install @skedox/analytics-vue
 ```
 
 ```typescript
 // main.ts
 import { createApp } from 'vue';
-import { SkedoxPlugin } from '@skedox/vue';
+import { SkedoxPlugin } from '@skedox/analytics-vue';
 
 const app = createApp(App);
 
@@ -143,7 +143,7 @@ app.mount('#app');
 
 ```vue
 <script setup>
-import { useAnalytics, usePageview } from '@skedox/vue';
+import { useAnalytics, usePageview } from '@skedox/analytics-vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();

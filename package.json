@@ -8,10 +8,10 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces",
-    "build:core": "npm run build -w @skedox/core",
-    "build:vanilla": "npm run build -w @skedox/vanilla",
-    "build:react": "npm run build -w @skedox/react",
-    "build:vue": "npm run build -w @skedox/vue",
+    "build:core": "npm run build -w @skedox/analytics-core",
+    "build:vanilla": "npm run build -w @skedox/analytics-vanilla",
+    "build:react": "npm run build -w @skedox/analytics-react",
+    "build:vue": "npm run build -w @skedox/analytics-vue",
     "dev": "npm run dev --workspaces --if-present",
     "clean": "rm -rf packages/*/dist",
     "typecheck": "npm run build:core && tsc --noEmit -p packages/core && tsc --noEmit -p packages/vanilla && tsc --noEmit -p packages/react && tsc --noEmit -p packages/vue",
@@ -23,6 +23,8 @@
     "prepare": "husky"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
     "@eslint/js": "^9.0.0",
     "@types/react": "^19.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",

@@ -1,5 +1,10 @@
 import type { App, InjectionKey } from 'vue';
-import { createTracker, type AnalyticsConfig, type Analytics, type InitParam } from '@skedox/core';
+import {
+  createTracker,
+  type AnalyticsConfig,
+  type Analytics,
+  type InitParam,
+} from '@skedox/analytics-core';
 
 export const ANALYTICS_KEY: InjectionKey<Analytics> = Symbol('skedox-analytics');
 

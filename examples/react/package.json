@@ -12,7 +12,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.0.0",
-    "@skedox/react": "file:../../packages/react"
+    "@skedox/analytics-react": "file:../../packages/react"
   },
   "devDependencies": {
     "@types/react": "^19.0.0",

@@ -17,4 +17,4 @@ export {
 } from './composables';
 
 // Re-export core types
-export type { AnalyticsConfig, InitParam, Analytics } from '@skedox/core';
+export type { AnalyticsConfig, InitParam, Analytics } from '@skedox/analytics-core';
