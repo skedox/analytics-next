@@ -1,6 +1,6 @@
 {
   "name": "@skedox/analytics-vue",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Skedox Analytics SDK for Vue.js - composables and plugin for web analytics",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -35,7 +35,7 @@
     "directory": "packages/vue"
   },
   "dependencies": {
-    "@skedox/analytics-core": "^1.0.0"
+    "@skedox/analytics-core": "^1.1.1"
   },
   "peerDependencies": {
     "vue": ">=3.0.0"
