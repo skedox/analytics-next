@@ -14,7 +14,7 @@
     "build:vue": "npm run build -w @skedox/vue",
     "dev": "npm run dev --workspaces --if-present",
     "clean": "rm -rf packages/*/dist",
-    "typecheck": "tsc --noEmit -p packages/core && tsc --noEmit -p packages/vanilla && tsc --noEmit -p packages/react && tsc --noEmit -p packages/vue",
+    "typecheck": "npm run build:core && tsc --noEmit -p packages/core && tsc --noEmit -p packages/vanilla && tsc --noEmit -p packages/react && tsc --noEmit -p packages/vue",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
