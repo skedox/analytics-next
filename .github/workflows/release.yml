@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       releases_created: ${{ steps.release.outputs.releases_created }}
-      paths_released: ${{ steps.release.outputs.paths_released }}
       core--release_created: ${{ steps.release.outputs['packages/core--release_created'] }}
       vanilla--release_created: ${{ steps.release.outputs['packages/vanilla--release_created'] }}
       react--release_created: ${{ steps.release.outputs['packages/react--release_created'] }}
@@ -47,19 +46,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build all packages
         run: npm run build
 
+      # Publish core first (others depend on it)
       - name: Publish @skedox/analytics-core
         if: ${{ needs.release-please.outputs.core--release_created == 'true' }}
         run: npm publish -w @skedox/analytics-core --access public --provenance
 
+      # Then publish the rest
       - name: Publish @skedox/analytics-vanilla
         if: ${{ needs.release-please.outputs.vanilla--release_created == 'true' }}
         run: npm publish -w @skedox/analytics-vanilla --access public --provenance

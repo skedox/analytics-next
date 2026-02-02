@@ -35,7 +35,7 @@
     "directory": "packages/vue"
   },
   "dependencies": {
-    "@skedox/analytics-core": "1.0.0"
+    "@skedox/analytics-core": "^1.0.0"
   },
   "peerDependencies": {
     "vue": ">=3.0.0"

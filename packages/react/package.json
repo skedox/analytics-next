@@ -34,7 +34,7 @@
     "directory": "packages/react"
   },
   "dependencies": {
-    "@skedox/analytics-core": "1.0.0"
+    "@skedox/analytics-core": "^1.0.0"
   },
   "peerDependencies": {
     "react": ">=17.0.0"
